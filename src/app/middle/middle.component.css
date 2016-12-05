@@ -1,0 +1,16 @@
+.navCaps{
+  width: 300px;
+  height: 500px;
+  background-color: #ffff00;
+}
+
+
+
+.bg-2 {
+  background-color: #474e5d; /* Dark Blue */
+  color: #ffffff;
+}
+.bg-3 {
+  background-color: #ffffff; /* White */
+  color: #555555;
+}

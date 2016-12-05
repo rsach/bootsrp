@@ -1,0 +1,54 @@
+
+.something{
+  padding-top: 15%;
+}
+
+
+
+
+
+
+
+.home-component{
+  background: url(../../assets/assign1/banner.jpg);
+
+  height: 50px;
+  width: 50px;
+}
+
+
+.navbar-brand{
+  font-size: 35px;
+}
+
+.navbar-container {
+  padding: 20px 0 20px 0;
+}
+
+.navbar.navbar-fixed-top.fixed-theme {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  left:0%;
+  z-index:9999;
+  background-color: rgba(0, 0, 0, 0.59);
+}
+
+.navbar-brand.fixed-theme {
+  font-size: 18px;
+}
+
+.navbar-container.fixed-theme {
+  padding: 0;
+}
+
+.navbar-brand.fixed-theme,
+.navbar-container.fixed-theme,
+.navbar.navbar-fixed-top.fixed-theme,
+.navbar-brand,
+.navbar-container{
+  transition: 0.8s;
+  -webkit-transition:  0.8s;
+}
+

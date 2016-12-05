@@ -1,0 +1,33 @@
+body{
+  font-family:Arial;
+}
+
+.box{
+  width: 150px;
+  height: 40px;
+  float: left;
+  border:2px solid #ccc;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  color: #888;
+}
+
+p.new{
+  width: 126px;
+  color: white;
+  background-color: #3190A5;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  padding: 1px;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 12px;
+  font-weight: 100;
+  font-size: 11px;
+  color: #F0F0F0;
+}
