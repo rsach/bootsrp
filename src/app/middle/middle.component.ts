@@ -15,7 +15,6 @@ export class MiddleComponent implements OnInit,AfterViewInit {
   top:number = 0;
   flag:boolean = true;
   scrollFinish:number = 0;
-  scrollFinishh:number = 0;
 
   footer:number = 0;
   offsetTop:number =0;
@@ -104,12 +103,9 @@ export class MiddleComponent implements OnInit,AfterViewInit {
     this.offsetTop = this.dom.query('#start').clientHeight;
 
     this.footer  = this.dom.query('#bottom').clientHeight;
-    //this.scrollFinish = this.totalScroll -this.footer - this.windowHeight ;
-    this.scrollFinishh = this.offsetTop+this.row - this.windowHeight;
+    this.scrollFinish = this.totalScroll -this.footer - this.windowHeight ;
 
-    this.scrollFinish = this.scrollFinishh + this.sidebar;
-
-    this.sidebarTop = this.scrollFinishh - this.sidebar - 40;
+    this.sidebarTop = this.scrollFinish - this.sidebar - 40;
 
 
     
@@ -120,7 +116,7 @@ export class MiddleComponent implements OnInit,AfterViewInit {
   }
 
 
-
+  
 
 
 
