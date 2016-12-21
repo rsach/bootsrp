@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter';
+
+
 import { AppComponent } from './app.component';
 import { StartComponent } from './start/start.component';
 import { Assign1Component } from './assign1/assign1.component';
@@ -30,7 +33,7 @@ import { FlyOutMenuComponent } from './fly-out-menu/fly-out-menu.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [BrowserDomAdapter],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

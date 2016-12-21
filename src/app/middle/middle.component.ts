@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener, Input, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 
+import { BrowserDomAdapter } from '@angular/platform-browser/src/browser/browser_adapter';
+
 @Component({
   selector: 'app-middle',
   templateUrl: './middle.component.html',
@@ -7,17 +9,13 @@ import { Component, OnInit, HostListener, Input, ElementRef, AfterViewInit, View
 })
 export class MiddleComponent implements OnInit,AfterViewInit {
 
-  constructor() { }
-
-  @ViewChild('abcd') el1:ElementRef;
-
-  container:any;
-  container_resize:any;
+  constructor(private dom:BrowserDomAdapter) { }
 
   fixed:string ='absolute';
   top:number = 0;
   flag:boolean = true;
   scrollFinish:number = 0;
+  scrollFinishh:number = 0;
 
   footer:number = 0;
   offsetTop:number =0;
@@ -29,28 +27,23 @@ export class MiddleComponent implements OnInit,AfterViewInit {
   sidebar:number = 0;
 
 
-
+  @HostListener('window:resize', ['$event'])
   ngAfterViewInit() {
 
       this.calculatePosition();
+      
 
 
   }
 
-  
+
 
   ngOnInit(){
 
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-      this.calculatePosition()
 
 
-
-
-  }
 
 
 
@@ -100,31 +93,34 @@ export class MiddleComponent implements OnInit,AfterViewInit {
   calculatePosition(){
 
 
-    this.container = this.el1.nativeElement;
 
-    this.sidebar = this.container.lastElementChild.firstElementChild.firstElementChild.clientHeight
-    console.log(this.sidebar)
+    this.sidebar = this.dom.query('#fixy').clientHeight
 
-    this.totalScroll = this.container.offsetParent.clientHeight
-    this.row = this.container.clientHeight
+    this.totalScroll = this.dom.query('#root').clientHeight
+    this.row = this.dom.query('#middle').clientHeight;
 
-    this.windowHeight = this.container.ownerDocument.defaultView.innerHeight
+    this.windowHeight = window.innerHeight;
 
-    this.offsetTop = this.container.parentNode.offsetParent.children["0"].children["0"].clientHeight
+    this.offsetTop = this.dom.query('#start').clientHeight;
 
-    this.footer  = this.container.parentNode.parentNode.parentElement.children[2].clientHeight;
-    this.scrollFinish = this.totalScroll -this.footer - this.windowHeight ;
+    this.footer  = this.dom.query('#bottom').clientHeight;
+    //this.scrollFinish = this.totalScroll -this.footer - this.windowHeight ;
+    this.scrollFinishh = this.offsetTop+this.row - this.windowHeight;
 
-    this.sidebarTop = this.scrollFinish - this.sidebar - 40;
+    this.scrollFinish = this.scrollFinishh + this.sidebar;
 
-
-    //console.log(this.sticky)
+    this.sidebarTop = this.scrollFinishh - this.sidebar - 40;
 
 
+    
 
-    console.log(this.offsetTop,this.totalScroll,this.row,this.windowHeight,this.footer,this.sidebar,this.scrollFinish,this.sidebarTop);
 
+
+    
   }
+
+
+
 
 
 
