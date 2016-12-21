@@ -40,21 +40,19 @@ ngOnInit() {
   this.height = window.innerHeight;
 }
 
-
+@HostListener('window:resize', ['$event'])
 ngAfterViewInit(){
-  this.container = this.el.nativeElement;
-  this.navHeight = this.container.clientHeight;
-
+  this.onResize();
   this.navbarH.emit({
     value: this.navHeight
 
   })
 }
 
-@HostListener('window:resize', ['$event'])
-onResize(event) {
-  this.width = event.target.innerWidth;
-  this.height = event.target.innerHeight;
+
+onResize() {
+  this.width = window.innerWidth;
+  this.height = window.innerHeight;
 }
 
 

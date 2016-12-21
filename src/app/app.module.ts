@@ -11,6 +11,7 @@ import { Assign3Component } from './assign3/assign3.component';
 import { Assign4Component } from './assign4/assign4.component';
 import { MiddleComponent } from './middle/middle.component';
 import { BottomComponent } from './bottom/bottom.component';
+import { FlyOutMenuComponent } from './fly-out-menu/fly-out-menu.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BottomComponent } from './bottom/bottom.component';
     Assign3Component,
     Assign4Component,
     MiddleComponent,
-    BottomComponent
+    BottomComponent,
+    FlyOutMenuComponent
   ],
   imports: [
     BrowserModule,
